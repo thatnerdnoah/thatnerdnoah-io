@@ -7,7 +7,7 @@ export default class GithubProjects extends Component {
     constructor() {
         super();
         this.getGithubInfo();
-        this.getRepos();
+        // this.getRepos();
     }
 
     state = {
@@ -25,24 +25,28 @@ export default class GithubProjects extends Component {
         }
     }
 
-    getRepos = async () => {
-        try {
-            const response = await fetch(`${githubAPI}users/thatnerdnoah/repos`);
-            const data = response.json();
-            console.log(data);
-        } catch(err) {
-            console.error(err);
-        }
-    }
+    // getRepos = async () => {
+    //     try {
+    //         const response = await fetch(`${githubAPI}users/thatnerdnoah/repos`);
+    //         const data = response.json();
+    //         console.log(data);
+    //     } catch(err) {
+    //         console.error(err);
+    //     }
+    // }
 
     render() {
         const { data } = this.state;
         return (
-            <div>
-                <a href={data.linkToProfile} target="_blank" rel="noopener noreferrer"><img src={data.avatar_url} alt="Profile" width={200} height={200} /></a>
+            <div style={divStyle}>
+                <a href={data.html_url} target="_blank" rel="noopener noreferrer"><img src={data.avatar_url} alt="Profile" width={200} height={200} /></a>
                 <p>Click the above image to go to my Github Profile</p>
             </div>
         )
     }
 
+}
+
+const divStyle = {
+    textAlign: "center"
 }
