@@ -33,6 +33,12 @@ class About extends Component {
                         <li>HTML/CSS/Javascript</li>
                         <li>React.js Framework</li>
                     </ul>
+                    <h4>Future Endeavors</h4>
+                    <ul>
+                        <li>R Programming Language</li>
+                        <li>Unity</li>
+                        <li>Azure</li>
+                    </ul>
                 </div>
             </div>
         )
